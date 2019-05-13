@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: "http://obscure-sea-69570.herokuapp.com"
+  serverUrl: "https://powerful-journey-98214.herokuapp.com/"
 };
