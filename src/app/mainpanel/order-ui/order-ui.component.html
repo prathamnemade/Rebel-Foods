@@ -1,0 +1,39 @@
+<div class="row">
+    <h6>Please place your order below :</h6>
+</div>
+<div class="row">
+    <div class="ui-md-7">
+        <div class="row">
+            <div class="ui-md-4">
+                <p-dropdown [options]="orderUiService.dataToShow" [(ngModel)]="orderUiService.selectedItem" placeholder="Select an Item" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+            <div class="ui-md-1">
+                <input id="quantity" type="number" pInputText [(ngModel)]="orderUiService.selectedQuantity">
+            </div>
+            <div class="ui-md-3">
+                <div class="row">
+                    <div class="ui-md-6" style="text-align:center;">
+                        <button type="button" class="btn btn-success" [disabled]="!(orderUiService.selectedItem)" (click)="orderUiService.addItem()">Add</button>
+                    </div>
+                    <div class="ui-md-6" style="text-align:center;">
+                        <button type="button" class="btn btn-warning" (click)="orderUiService.reset();">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let item of orderUiService.ordersConfirmed" class="ui-md-5">
+                <div class="row cardMain">
+                    <div class="ui-md-9 nameBox">{{item.name}}</div>
+                    <div class="ui-md-2 ">
+                        <div class="row" style="font-weight: 400;font-size: 15px;color: #b20000;">Quantity.</div>
+                        <div class="row numberBox"> {{item.quantity}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-md-5">
+        <app-receipt (orderTrigger)="orderTriggered($event)"></app-receipt>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<div class="navbar">
+    <div class="row header">
+        <div class="ui-g-12 ui-md-3 ui-lg-3">
+            <div class="logoHeader">
+                <div class="firstWord">Rebel</div>
+                <div class="secondWord">Foods</div>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-3 ui-lg-3">
+            <div class="row">
+                <div class="ui-md-3 divisionHeader" (click)="redirectToPortal('order')" [ngClass]="{'selected1':tabSelected.order,'unselected1':tabSelected.order}">
+                    Orders
+                </div>
+                <div class="ui-md-1 divider">
+                    <span></span>
+                </div>
+                <div class="ui-md-3 divisionHeader" (click)="redirectToPortal('predicted')" [ngClass]="{'selected1':tabSelected.predicted,'unselected1':tabSelected.predicted}">
+                    Predicted
+                </div>
+                <div class="ui-md-1 divider">
+                    <span></span>
+                </div>
+                <div class="ui-md-3 divisionHeader" (click)="redirectToPortal('kitchen')" [ngClass]="{'selected1':tabSelected.kitchen,'unselected1':tabSelected.kitchen}">
+                    Kitchen
+                </div>
+            </div>
+        </div>
+        <div class="ui-md-offset-2 ui-md-1">
+            <div class="row">
+                <i class="fa fa-bell fa-2x notification" (click)="commonService.showNotify()"></i>
+                <div class="numberCount">{{commonService.newNotification?commonService.newNotification.length:'Loading..'}}</div>
+            </div>
+            <div class="row mainNotificationPanel" *ngIf="commonService.allNotificationPanel">
+                <div style="display:inline-flex;width: 100%;justify-content: center;">
+                    <h6>All Notifications :</h6>
+                    <i class="fa fa-times-circle fa-2x crossButton" (click)="commonService.allNotificationPanel=false;" style="    position: absolute;
+                    top: 25px;"></i>
+                </div>
+                <div class="notificationPanelAll">
+                    <div class="notificationPanel" *ngFor="let notify of commonService.newNotification">
+                        <div class="row">
+                            <div class="ui-md-2" style="margin: auto;padding:5px;">
+                                <img src="../../assets/img/food.png" alt="food" style="width:100%;">
+                            </div>
+                            <div class="ui-md-10" style="padding:5px;">
+                                <div class="row">
+                                    Item : {{notify.name}}
+                                </div>
+                                <div class="row">
+                                    Quantity : {{notify.quantity}}
+                                </div>
+                                <div class="row">
+                                    Time : {{notify.time|date:'short'}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mainNotificationPanel" *ngIf="commonService.currentNotification">
+                <div style="display:inline-flex;width: 100%;justify-content: center;">
+                    <h6>{{commonService.currentnewNotification.length}} New Notifications :</h6>
+                    <i class="fa fa-times-circle fa-2x crossButton" (click)="commonService.allNotificationPanel=false;" style="    position: absolute;
+                    top: 25px;"></i>
+                </div>
+                <div class="notificationPanelAll">
+                    <div class="notificationPanel" *ngFor="let notify of commonService.currentnewNotification">
+                        <div class="row">
+                            <div class="ui-md-2" style="margin: auto;padding:5px;">
+                                <img src="../../assets/img/food.png" alt="food" style="width:100%;">
+                            </div>
+                            <div class="ui-md-10" style="padding:5px;">
+                                <div class="row">
+                                    Item : {{notify.name}}
+                                </div>
+                                <div class="row">
+                                    Quantity : {{notify.quantity}}
+                                </div>
+                                <div class="row">
+                                    Time : {{notify.time |date:'short'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="ui-md-2">
+        <div class="row subPanelHeader" (click)="redirectToPortal('order')" [ngClass]="{'selected':tabSelected.order,'unselected':tabSelected.order}">
+            Orders
+        </div>
+        <div class="row subPanelHeader" (click)="redirectToPortal('predicted')" [ngClass]="{'selected':tabSelected.predicted,'unselected':tabSelected.predicted}">
+            Predicted
+        </div>
+        <div class="row subPanelHeader" (click)="redirectToPortal('kitchen')" [ngClass]="{'selected':tabSelected.kitchen,'unselected':tabSelected.kitchen}">
+            Kitchen
+        </div>
+    </div>
+    <div class="ui-md-8 mainPanel">
+        <router-outlet></router-outlet>
+    </div>
+</div>

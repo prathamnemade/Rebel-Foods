@@ -1,0 +1,173 @@
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: #4267b2;
+    padding: 0;
+}
+
+.header {
+    margin: 0;
+    width: 100%;
+}
+
+.logoHeader {
+    text-align: center;
+}
+
+.firstWord,
+.secondWord {
+    display: inline;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.firstWord {
+    background: #c6e2ff;
+    color: black;
+}
+
+.secondWord {
+    background: #294f52;
+    color: white;
+}
+
+.divisionHeader,
+.unselected1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.divisionHeader:hover,
+.selected1 {
+    background: #CAE1FF;
+    border-radius: 3px;
+    opacity: 0.9;
+    cursor: pointer;
+    color: black;
+}
+
+.divider {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.divider span {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+[class^="ui-"] {
+    padding: 0;
+}
+
+.notification {
+    margin-top: 15px;
+}
+
+.notification:hover {
+    cursor: pointer;
+}
+
+.divider2 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.divider2 span {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.row {
+    margin: 0;
+}
+
+.subPanelHeader,
+.selected {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.subPanelHeader:hover,
+.unselected {
+    font-size: 25px;
+    font-weight: 700;
+    background: #292728;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.mainPanel {
+    padding: 20px;
+    padding-left: 50px;
+}
+
+.mainNotificationPanel {
+    color: black;
+    width: 350px;
+    background: #fff;
+    border: 1px solid rgba(100, 100, 100, .4);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+.notificationPanel {
+    background-color: #edf2fa;
+    border-bottom: 1px solid #dddfe2;
+    overflow: hidden;
+}
+
+.currentNotificationPanel {
+    background: #323232;
+    width: 350px;
+    max-height: 350px;
+    overflow: scroll;
+    color: white;
+    overflow-x: hidden;
+}
+
+.currentNotificationPanel div.notificationPanel :nth-last-of-type(odd) {
+    background: ghostwhite;
+    margin: 5px;
+    border: 0;
+    border-radius: 3px;
+    color: black;
+}
+
+.currentNotificationPanel div.notificationPanel :nth-last-of-type(even) {
+    margin: 5px;
+    border: 0;
+    border-radius: 3px;
+}
+
+.notificationPanelAll {
+    max-height: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+i.crossButton:hover {
+    cursor: pointer;
+}
+
+.numberCount {
+    min-width: 12px;
+    border-radius: 15%;
+    background: red;
+    color: whitesmoke;
+    margin: 0;
+    padding: 1px;
+    font-size: 12px;
+    border: 0;
+    height: 20px;
+    text-align: center;
+}

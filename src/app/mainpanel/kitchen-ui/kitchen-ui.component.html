@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Names</th>
+        <th>Quantity</th>
+        <th>Created till now</th>
+        <th>Predicted</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let item of kitchenUiService.allDataOnKitchenPortal;let i=index;">
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.completedTillNow}}</td>
+        <td>{{item.predicted}}</td>
+        <td><button class="btn btn-success doneButton">DONE</button></td>
+    </tr>
+</table>

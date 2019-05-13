@@ -1,0 +1,40 @@
+<div>
+    <div class="row">
+        <h5>Please make the predictions for the day!!</h5>
+    </div>
+    <div class="row">
+        <div class="ui-md-4">
+            <p-dropdown [options]="predictedUiService.dataToShow" editable="true" [(ngModel)]="predictedUiService.selectedItem" placeholder="Select an Item" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+        <div class="ui-md-1">
+            <input id="quantity" type="number" pInputText [(ngModel)]="predictedUiService.predictedStock">
+        </div>
+        <div class="ui-md-3">
+            <div class="row">
+                <div class="ui-md-6" style="text-align:center;">
+                    <button type="button" style="margin:5px" class="btn btn-success" [disabled]="!(predictedUiService.selectedItem)" (click)="predictedUiService.addItem()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let item of predictedUiService.dataPredictedForTheDay;let i=index" class="ui-md-3" style="margin:10px">
+            <div class="row cardBox">
+                <div class="ui-md-3">
+                    <img src="../../../assets/img/food.png" alt="food" style="width:100%;">
+                </div>
+                <div class="ui-md-8">
+                    <div class="row centerNameAndValue">
+                        <div>{{item.name}}</div>
+                    </div>
+                    <div class="row centerNameAndValue">
+                        <div style="color:#ff9999;">Predicted Value : {{item.predicted}}</div>
+                    </div>
+                </div>
+                <div class="ui-md-1">
+                    <i class="fa fa-times-circle crossButton" (click)="predictedUiService.cancelPrediction(i)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

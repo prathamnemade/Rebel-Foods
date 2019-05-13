@@ -1,0 +1,50 @@
+p-dropdown div.ui-dropdown,
+#quantity {
+    width: 100%
+}
+
+#quantity {
+    border: 0;
+    border-bottom: 1px solid gray;
+}
+
+p-dropdown div.ui-dropdown-panel {
+    background: #666666;
+    color: white;
+}
+
+p-dropdown div.ui-dropdown-items-wrapper ul.ui-dropdown-items p-dropdownitem:nth-of-type(odd) li {
+    background: #e5e5e5;
+    color: black;
+}
+
+p-dropdown div.ui-dropdown-items-wrapper ul.ui-dropdown-items p-dropdownitem :nth-of-type(even) li {
+    color: white;
+}
+
+p-dropdown div.ui-dropdown-items-wrapper ul.ui-dropdown-items p-dropdownitem li:hover {
+    font-weight: 700;
+}
+
+p-dropdown div.ui-dropdown {
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.cardBox {
+    background: #666600;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    height: 85px;
+}
+
+.centerNameAndValue {
+    display: flex;
+    justify-content: center;
+}
+
+i.crossButton:hover {
+    cursor: pointer;
+}

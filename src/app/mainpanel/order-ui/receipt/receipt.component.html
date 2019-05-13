@@ -1,0 +1,6 @@
+{{orderUiService.ordersConfirmed|json}}
+<div class="row">
+    <div class="row">
+        <p-button icon="pi pi-check" iconPos="right" label="Click to Order" (click)="subOrder()" [disabled]="!(orderUiService.ordersConfirmed.length>0)"></p-button>
+    </div>
+</div>
