@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
     providedIn: 'root'
 })
@@ -8,5 +8,7 @@ export class HttpUrls {
     savePredicted = `${environment.serverUrl}/savePredicted`;
     kitchenPortal = `${environment.serverUrl}/kitchenPortal`;
     saveNotifications= `${environment.serverUrl}/saveNotification`;
-    getNotifications=`${environment.serverUrl}/getnotification`
+    getNotifications=`${environment.serverUrl}/getnotification`;
+    updateNotifications=`${environment.serverUrl}/updateNotification`;
+
 }

@@ -11,6 +11,6 @@
         <td>{{item.quantity}}</td>
         <td>{{item.completedTillNow}}</td>
         <td>{{item.predicted}}</td>
-        <td><button class="btn btn-success doneButton">DONE</button></td>
+        <td><button class="btn btn-success doneButton" (click)="kitchenUiService.doneAllData(item)">DONE</button></td>
     </tr>
 </table>

@@ -30,3 +30,8 @@ module.exports.getNotification = function(req, res) {
         }
     })
 }
+
+module.exports.updateNotification = function(req, res) {
+    console.log(req)
+        // Notification.find({name:req.body.name})
+}

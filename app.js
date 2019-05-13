@@ -22,6 +22,9 @@ io.on('connection', function(socket) {
         console.log(data);
         io.emit('newNotification', { value: true, newOrder: data });
     });
+    socket.on('doneData', function(data) {
+        io.emit('notifyOrderComplete', data)
+    })
 });
 var routesApi = require('./api/routes/index');
 app.use('/', routesApi)

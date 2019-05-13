@@ -12,7 +12,10 @@ export class CommonService {
     currentNotification = false;
     newNotification: any[] = [];
     currentnewNotification: any[] = [];
+    orderCompletedData:any[]=[]
     allNotificationPanel: boolean = false;
+    orderComplete:boolean=false;
+    completeTime;
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
@@ -21,12 +24,15 @@ export class CommonService {
         this.currentnewNotification = data.newOrder;
         this.settimeoutTrigger()
     })
+    orderRecievedNotify = this.socket.on('notifyOrderComplete', (data) => {
+        this.updateAllOrders(data)
+        clearTimeout(this.completeTime)
+        this.settimeoutOrderComplete()
+        this.orderCompletedData.push(data)
+    })
     getTotalNotification() {
-        console.error("!");
-        
         this.getNotificationData().subscribe((data) => {
             data = data.reverse()
-            console.error("2",data);
             this.newNotification = data;
         })
     }
@@ -36,9 +42,18 @@ export class CommonService {
             this.currentNotification = false;
         }, 5000);
     }
+    settimeoutOrderComplete(){
+        this.orderComplete=true;
+
+        this.completeTime=setTimeout(() => {
+            this.orderComplete = false;
+            this.orderCompletedData=[]
+        }, 5000);
+        
+    }
     sendEventNotification(data) {
         this.saveNotifactionsToDB(data).subscribe((data) => {
-          this.getTotalNotification()
+            this.getTotalNotification()
 
         })
         this.socket.emit('notificationData', data);
@@ -47,12 +62,20 @@ export class CommonService {
         return this.http.get(this.httpUrls.getNotifications, this.httpOptions)
     }
     saveNotifactionsToDB(data): Observable<any> {
-        console.warn("data",data);
-        
+        console.warn("data", data);
+
         return this.http.post(this.httpUrls.saveNotifications, data, this.httpOptions)
     }
     showNotify() {
         this.getTotalNotification()
         this.allNotificationPanel = true;
+    }
+    updateAllOrders(data){
+        this.updateNotiifcation(data).subscribe((data)=>{
+            console.log("httpOptions-----",data)
+        })
+    }
+    updateNotiifcation(data):Observable<any>{
+        return this.http.post(this.httpUrls.updateNotifications,data,this.httpOptions)
     }
 }

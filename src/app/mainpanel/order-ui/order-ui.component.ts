@@ -21,6 +21,7 @@ export class OrderUIComponent implements OnInit {
           // this.common.getTotalNotification()
           this.common.sendEventNotification(this.orderUiService.ordersConfirmed)
           this.router.navigate(['/kitchen']);
+          document.getElementById('kitchen').click()
           this.orderUiService.allReset()
         }
       })
