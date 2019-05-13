@@ -1,13 +1,19 @@
 {
     "name": "rebelfood",
     "version": "0.0.0",
+    "main": "app.js",
     "scripts": {
         "ng": "ng",
         "start": "node app.js",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "postinstall": "ng build --aot --prod"
+    },
+    "engines": {
+        "node": "8.11.2",
+        "npm": "6.1.0"
     },
     "private": true,
     "dependencies": {
