@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var dbURI = 'mongodb://admin:admin123@ds155396.mlab.com:55396/rebelfoods';
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, });
+mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {

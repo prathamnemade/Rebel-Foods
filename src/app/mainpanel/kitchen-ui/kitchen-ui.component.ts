@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KitchenUiService } from './kitchenUI.service';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-kitchen-ui',
@@ -8,7 +9,7 @@ import { KitchenUiService } from './kitchenUI.service';
 })
 export class KitchenUIComponent implements OnInit {
 
-  constructor(public kitchenUiService:KitchenUiService) { }
+  constructor(public kitchenUiService:KitchenUiService,public commonService:CommonService ) { }
 
   ngOnInit() {
   }

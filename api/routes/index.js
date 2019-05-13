@@ -10,5 +10,5 @@ router.post('/savePredicted', savePredicted.savePredicted);
 router.post('/kitchenPortal', kitchenPortal.kitchenPortal);
 router.post('/saveNotification', notification.saveNotification);
 router.get('/getnotification', notification.getNotification);
-router.get('/updateNotification', notification.updateNotification)
+router.post('/updateNotification', notification.updateNotification)
 module.exports = router;

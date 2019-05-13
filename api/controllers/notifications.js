@@ -32,6 +32,12 @@ module.exports.getNotification = function(req, res) {
 }
 
 module.exports.updateNotification = function(req, res) {
-    console.log(req)
-        // Notification.find({name:req.body.name})
+    console.log(req.body)
+    Notification.findOneAndUpdate({ name: req.body.name, quantity: req.body.quantity, predicted: req.body.predicted }, { $inc: { 'completedTillNow': 1, 'quantity': -1 } }).exec((err, data) => {
+        if (data) {
+            Notification.find().exec((err, data) => {
+                if (data) { res.send(data) }
+            })
+        }
+    })
 }

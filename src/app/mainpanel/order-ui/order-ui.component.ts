@@ -3,6 +3,7 @@ import { OrderUiService } from './orderui.service';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
 import * as io from "socket.io-client";
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-order-ui',
   templateUrl: './order-ui.component.html',
@@ -11,7 +12,7 @@ import * as io from "socket.io-client";
 })
 export class OrderUIComponent implements OnInit {
   // socket = io('http://localhost:1111');
-  socket=io()
+  socket=io(environment.serverUrl)
   constructor(public orderUiService: OrderUiService, private router: Router,public common:CommonService) { }
   ngOnInit() {
   }
