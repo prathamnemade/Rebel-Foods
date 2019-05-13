@@ -4,7 +4,7 @@ var cors = require('cors');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 app.set('port', port);
 server.listen(1111);
 app.use(bodyParser.json());
@@ -25,4 +25,4 @@ io.on('connection', function(socket) {
 });
 var routesApi = require('./api/routes/index');
 app.use('/', routesApi)
-app.listen(port, () => console.log(`Example app listening on port {port}!`))
+app.listen(port, () => console.log(`Example app listening on port ` + port))
