@@ -6,7 +6,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 const port = process.env.PORT || 2000;
 app.set('port', port);
-server.listen(1111);
+// server.listen(1111);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());

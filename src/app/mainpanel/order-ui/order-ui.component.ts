@@ -10,7 +10,8 @@ import * as io from "socket.io-client";
   encapsulation: ViewEncapsulation.None,
 })
 export class OrderUIComponent implements OnInit {
-  socket = io('http://localhost:1111');
+  // socket = io('http://localhost:1111');
+  socket=io()
   constructor(public orderUiService: OrderUiService, private router: Router,public common:CommonService) { }
   ngOnInit() {
   }

@@ -8,7 +8,8 @@ import * as io from "socket.io-client";
     providedIn: 'root'
 })
 export class CommonService {
-    socket = io('http://localhost:1111');
+    // socket = io('http://localhost:1111');
+    socket=io();
     currentNotification = false;
     newNotification: any[] = [];
     currentnewNotification: any[] = [];

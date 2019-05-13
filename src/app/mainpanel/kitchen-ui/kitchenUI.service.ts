@@ -8,7 +8,8 @@ import * as io from "socket.io-client";
     providedIn: 'root'
 })
 export class KitchenUiService {
-    socket = io('http://localhost:1111');
+    // socket = io('http://localhost:1111');
+    socket=io()
     allDataOnKitchenPortal: any[] = []
     constructor(private httpUrls: HttpUrls, private http: HttpClient) {
         console.warn("kitchen")
