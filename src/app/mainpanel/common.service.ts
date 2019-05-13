@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class CommonService {
     // socket = io('http://localhost:1111');
-    socket=io(environment.serverUrl+'/'+1111);
+    socket=io(1111);
     currentNotification = false;
     newNotification: any[] = [];
     currentnewNotification: any[] = [];

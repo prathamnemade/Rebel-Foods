@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class KitchenUiService {
     // socket = io('http://localhost:1111');
-    socket=io(environment.serverUrl+'/'+1111);
+    socket=io(1111);
     allDataOnKitchenPortal: any[] = []
     constructor(private httpUrls: HttpUrls, private http: HttpClient) {
         console.warn("kitchen")

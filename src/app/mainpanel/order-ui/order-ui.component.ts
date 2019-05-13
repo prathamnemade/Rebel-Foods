@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class OrderUIComponent implements OnInit {
   // socket = io('http://localhost:1111');
-  socket=io(environment.serverUrl+'/'+1111);
+  socket=io(1111);
   constructor(public orderUiService: OrderUiService, private router: Router,public common:CommonService) { }
   ngOnInit() {
   }
