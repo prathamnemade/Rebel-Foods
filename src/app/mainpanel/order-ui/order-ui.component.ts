@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OrderUiService } from './orderui.service';
 import { Router } from '@angular/router';
 import { CommonService } from '../common.service';
-import * as io from "socket.io-client";
 import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-order-ui',
@@ -11,8 +10,6 @@ import { environment } from 'src/environments/environment.prod';
   encapsulation: ViewEncapsulation.None,
 })
 export class OrderUIComponent implements OnInit {
-  // socket = io('http://localhost:1111');
-  socket=io(1111);
   constructor(public orderUiService: OrderUiService, private router: Router,public common:CommonService) { }
   ngOnInit() {
   }

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class CommonService {
     // socket = io('http://localhost:1111');
-    socket=io(1111);
+    // socket=io(1111);
     currentNotification = false;
     newNotification: any[] = [];
     currentnewNotification: any[] = [];
@@ -22,18 +22,18 @@ export class CommonService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     constructor(private httpUrls: HttpUrls, private http: HttpClient, private kitchenUiService: KitchenUiService) { }
-    receivedData = this.socket.on('newNotification', (data) => {
-        this.currentnewNotification = data.newOrder;
-        this.settimeoutTrigger()
-    })
-    orderRecievedNotify = this.socket.on('notifyOrderComplete', (data) => {
-        console.warn("data,ordercomplete",data);
+    // receivedData = this.socket.on('newNotification', (data) => {
+    //     this.currentnewNotification = data.newOrder;
+    //     this.settimeoutTrigger()
+    // })
+    // orderRecievedNotify = this.socket.on('notifyOrderComplete', (data) => {
+    //     console.warn("data,ordercomplete",data);
         
-        this.updateAllOrders(data)
-        clearTimeout(this.completeTime)
-        this.settimeoutOrderComplete()
-        this.orderCompletedData.push(data)
-    })
+    //     this.updateAllOrders(data)
+    //     clearTimeout(this.completeTime)
+    //     this.settimeoutOrderComplete()
+    //     this.orderCompletedData.push(data)
+    // })
     getTotalNotification() {
         this.getNotificationData().subscribe((data) => {
             data = data.reverse()
