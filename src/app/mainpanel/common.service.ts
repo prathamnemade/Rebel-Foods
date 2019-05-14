@@ -60,7 +60,7 @@ export class CommonService {
             this.getTotalNotification()
 
         })
-        this.socket.emit('notificationData', data);
+        // this.socket.emit('notificationData', data);
     }
     getNotificationData(): Observable<any> {
         return this.http.get(this.httpUrls.getNotifications, this.httpOptions)
